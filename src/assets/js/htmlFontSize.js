@@ -10,5 +10,5 @@ document.addEventListener('DOMContentLoaded',()=>{
 //    获取到的fontSize不允许超过定义的最大值
     fontSize = fontSize > MAX_FONT_SIZE ? MAX_FONT_SIZE : fontSize;
 //    定义根元素html fontSize的大小rem
-    html.style.fontSize = fontSize
+    html.style.fontSize = fontSize + 'px'
 })
