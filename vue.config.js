@@ -13,7 +13,7 @@ module.exports = {
                         '@js': path.resolve(__dirname, './src/assets/js'),
                         '@css': path.resolve(__dirname, './src/assets/css'),
                         '@img': path.resolve(__dirname, './src/assets/img'),
-                        '@c': path.resolve(__dirname, './src/assets/components'),
+                        '@c': path.resolve(__dirname, './src/components'),
                     }
                 }
             }
