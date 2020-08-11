@@ -1,6 +1,6 @@
 <template>
   <div class="tool-bar">
-    <div class="tool-bar-item" v-for="(item,index) in toolBarData" :key="index">
+    <div class="tool-bar-item" v-for="(item,index) in toolBarData" :key="index" @click="onChangeFragment(item, index)">
       <img class="tool-bar-item-img" :src="[index === selectIndex? item.hIcon :item.nIcon]" alt="">
       <p class="tool-bar-item-name" :class="{'tool-bar-item-name-h' : index ===selectIndex}">{{item.name}}</p>
     </div>
@@ -23,7 +23,6 @@
   export default {
     data() {
       return {
-        aaa:'12333',
         toolBarData: [
           {
             // 默认状态下的图片
@@ -57,6 +56,12 @@
           }
         ],
         selectIndex:0
+      }
+    },
+    methods:{
+      onChangeFragment(item,index){
+        this.selectIndex = index;
+        this.$emit('onChangeFragment',item.componentName)
       }
     }
   }
