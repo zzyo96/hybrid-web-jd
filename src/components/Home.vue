@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <my-swiper :swiperImgs="swiperData.map(item => item.icon)" :height="swiperHeight"></my-swiper>
+    <my-swiper :swiperImgs="swiperImgs.map(item => item.icon)" :height="swiperHeight"></my-swiper>
   </div>
 </template>
 
@@ -13,9 +13,22 @@
     },
     data(){
       return{
-        swiperData: [],
-        swiperHeight:'',
+        swiperImgs: [],
+        swiperHeight:'184px',
       }
+    },
+    methods:{
+      initData: function () {
+        this.$http.get('/swiper')
+          .then(data => {
+            this.swiperData = data.list;
+          }).catch(err => {
+          console.log(err);
+        });
+      }
+    },
+    created() {
+      this.initData()
     }
   }
 
@@ -25,6 +38,8 @@
   .home{
     width: 100%;
     height: 100%;
-    font-size: 32px;
+    &-content{
+      height: 100%;
+    }
   }
 </style>
