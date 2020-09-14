@@ -31,19 +31,13 @@
     },
     methods: {
       initData: function () {
-        axios.get('/swiper.json')
-          .then(data => {
-            this.swiperImgs = data.list;
-          }).catch(err => {
-          console.log(err);
-        });
-
-        axios.get('/activitys.json')
-          .then(data => {
-            this.activityDatas = data.list;
-          }).catch(err => {
-          console.log(err);
-        });
+        Promise.all([
+          axios.get('/swiper.json'),
+          axios.get('/activitys.json')
+        ]).then((datas)=>{
+          this.swiperImgs = datas[0].list;
+          this.activityDatas = datas[1].list;
+        })
       }
     },
     mounted() {
