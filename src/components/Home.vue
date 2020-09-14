@@ -6,28 +6,31 @@
 
 <script>
   import MySwiper from '@c/swiper/MySwiper.vue';
+  import {axios} from '@js/axios.config.js'
 
   export default {
-    components:{
+    components: {
       MySwiper
     },
-    data(){
-      return{
+    data() {
+      return {
         swiperImgs: [],
-        swiperHeight:'184px',
+        swiperHeight: '184px'
       }
     },
-    methods:{
+    methods: {
       initData: function () {
-        this.$http.get('/swiper')
+        // console.log(this.$http,100)
+        axios.get('/swiper.json')
           .then(data => {
-            this.swiperData = data.list;
+            console.log(data,1233)
+            this.swiperImgs = data.list;
           }).catch(err => {
           console.log(err);
         });
       }
     },
-    created() {
+    mounted() {
       this.initData()
     }
   }
@@ -35,10 +38,11 @@
 </script>
 
 <style lang="scss" scoped>
-  .home{
+  .home {
     width: 100%;
     height: 100%;
-    &-content{
+
+    &-content {
       height: 100%;
     }
   }

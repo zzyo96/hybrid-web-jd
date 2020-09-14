@@ -2,9 +2,24 @@ const path = require('path');
 
 // vue.config.js
 module.exports = {
+    devServer: {
+        // proxy: {
+        //     '/api': {
+        //         target: 'http://localhost:8080', //路径指向本地主机地址及端口号
+        //         ws: true,
+        //         contentBase: path.join(__dirname, 'public'),
+        //         changeOrigin: true,
+        //         pathRewrite:{
+        //             '^/api': '/json' //路径转发代理
+        //         }
+        //     }
+        // }
+    },
     configureWebpack: config => {
         if (process.env.NODE_ENV === 'production') {
-            // 为生产环境修改配置...
+            // 为生产环境修改配置...\
+            return{
+            }
         } else {
             // 为开发环境修改配置...
             // return {
