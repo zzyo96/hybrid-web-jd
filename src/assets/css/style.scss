@@ -1,66 +1,52 @@
+@import './dimens.scss';
 @import './reset';
-@import './colors';
-@import './dimens';
+@import './colors.scss';
+
+// 文本最多两行展示
+.text-line-2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+}
 
 .z-index-2 {
     z-index: 2;
 }
 
-.z-index-4 {
-    z-index: 4;
-}
-
-.z-index-6 {
-    z-index: 6;
-}
-
-.z-index-8 {
-    z-index: 8;
-}
-
 .z-index-max {
-    z-index: 9999999;
+    z-index: 99999;
 }
 
+// 三角形
 .caret {
     display: inline-block;
     width: 0;
     height: 0;
-    border-top: 8px solid $mainColor;
-    border-right: 6px solid transparent;
-    border-left: 6px solid transparent;
-  }
+    border-top: px2rem(8) solid $mainColor;
+    border-left: px2rem(6) solid transparent;
+    border-right: px2rem(6) solid transparent;
+}
 
-  .cover {
+// 遮盖层
+.cover {
     width: 100%;
     height: 100%;
     position: fixed;
     background-color: rgba(0, 0, 0, 0.4);
-  }
+}
 
-  .single-row-text {
+// 单行文本
+.single-row-text {
     overflow: hidden;
-    text-overflow:ellipsis;
+    text-overflow: ellipsis;
     white-space: nowrap;
     display: inline-block;
-  }
+}
 
-  .input-container {
-    height: px2rem(48);
-    margin: $marginSize;
-    overflow: hidden;
-    margin-top: $marginSize;
-    background: white;
-    border-bottom: px2rem(1) solid $lineColor;
-    box-sizing: border-box;
-
-    input {
-        width: 100%;
-        height: 100%;
-        font-size: $titleSize;
-    }
-  }
-
+// 提交按钮
 .page-commit {
     width: 90%;
     height: px2rem(46);
@@ -70,19 +56,36 @@
     background-color: $mainColor;
     border-radius: px2rem(50);
     font-size: $titleSize;
-    color: #fff;
+    color: white;
     text-align: center;
-    -webkit-border-radius: px2rem(50);
-    -moz-border-radius: px2rem(50);
-    -ms-border-radius: px2rem(50);
-    -o-border-radius: px2rem(50);
 }
 
+// 输入框
+.input-container {
+    height: px2rem(48);
+    padding: $marginSize;
+    overflow: hidden;
+    margin-top: $marginSize;
+    background-color: white;
+    border-bottom: px2rem(1) solid $lineColor;
+    box-sizing: border-box;
 
+    input {
+        width: 100%;
+        height: 100%;
+        font-size: $titleSize;
+        outline: none;
+        border: none;
+    }
+}
+
+// IphoneX 顶部危险区
 .iphonex-top {
-    padding-top: 44px !important;
+    padding-top: 44px;
 }
 
+// IphoneX 底部危险区
 .iphonex-bottom {
     padding-bottom: 34px;
 }
+

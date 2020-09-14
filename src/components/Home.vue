@@ -8,6 +8,10 @@
           <img v-for="(item,index) in activityDatas" :key="index" :src="item.icon" alt="">
         </div>
       </activity>
+      <!--功能选项-->
+      <mode-options></mode-options>
+      <!--秒杀模块-->
+      <seconds :dataSource = secondsDatas></seconds>
     </div>
   </div>
 </template>
@@ -16,27 +20,34 @@
   import MySwiper from '@c/swiper/MySwiper.vue';
   import {axios} from '@js/axios.config.js'
   import Activity from '@c/currency/Activity.vue'
+  import Seconds from '@c/seconds/Seconds.vue'
+  import ModeOptions from '@c/currency/ModeOptions.vue'
 
   export default {
     components: {
       MySwiper,
-      Activity
+      Activity,
+      ModeOptions,
+      Seconds
     },
     data() {
       return {
         swiperImgs: [],
         swiperHeight: '184px',
-        activityDatas:[]
+        activityDatas:[],
+        secondsDatas:[]
       }
     },
     methods: {
       initData: function () {
         Promise.all([
           axios.get('/swiper.json'),
-          axios.get('/activitys.json')
+          axios.get('/activitys.json'),
+          axios.get('/seconds.json')
         ]).then((datas)=>{
           this.swiperImgs = datas[0].list;
           this.activityDatas = datas[1].list;
+          this.secondsDatas = datas[2].list;
         })
       }
     },
