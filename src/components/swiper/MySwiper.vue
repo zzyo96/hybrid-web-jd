@@ -14,7 +14,7 @@
 
 <script>
   import 'swiper/swiper-bundle.css'
-  import {Swiper, SwiperSlide} from 'vue-awesome-swiper'
+  import {swiper, swiperSlide} from 'vue-awesome-swiper'
 
   export default {
     props:{
@@ -31,8 +31,8 @@
       }
     },
     components:{
-      Swiper,
-      SwiperSlide
+      swiper,
+      swiperSlide
     },
     data(){
       return {
