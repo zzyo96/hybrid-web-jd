@@ -3,6 +3,7 @@ import VueResource from 'vue-resource'
 import App from './App.vue'
 import router from './router'
 // import store from './store'
+import '@js/filters.js';
 import '@js/htmlFontSize.js'
 import '@js/axios.config.js'
 

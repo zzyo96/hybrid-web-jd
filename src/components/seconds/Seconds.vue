@@ -9,10 +9,8 @@
         <div class="seconds-content">
             <div class="seconds-content-item" v-for="(item, index) in dataSource" :key="index">
                 <img class="seconds-content-item-icon" :src="item.icon" alt="" srcset="">
-                <!--<p class="seconds-content-item-price">￥{{item.price | priceValue}}</p>-->
-                <p class="seconds-content-item-price">￥{{item.price}}</p>
-                <!--<p class="seconds-content-item-old-price">￥{{item.oldPrice | priceValue}}</p>-->
-                <p class="seconds-content-item-old-price">￥{{item.oldPrice}}</p>
+                <p class="seconds-content-item-price">￥{{item.price | priceValue}}</p>
+                <p class="seconds-content-item-old-price">￥{{item.oldPrice | priceValue}}</p>
             </div>
         </div>
     </div>
