@@ -12,6 +12,12 @@
       <mode-options></mode-options>
       <!--秒杀模块-->
       <seconds :dataSource = secondsDatas></seconds>
+      <!--拼购节-->
+      <activity>
+        <div class="activity-pin-gou-jie">
+          <img src="@img/pinGouJie.gif" />
+        </div>
+      </activity>
     </div>
   </div>
 </template>
@@ -64,6 +70,7 @@
     width: 100%;
     height: 100%;
     background-color: $bgColor;
+    overflow: auto;
 
     &-content {
       height: 100%;
@@ -75,6 +82,15 @@
 
         img{
           width: 33.3%;
+        }
+      }
+
+      .activity-pin-gou-jie {
+        background-color: white;
+        margin-top: $marginSize;
+
+        img{
+          width: 100%;
         }
       }
     }
