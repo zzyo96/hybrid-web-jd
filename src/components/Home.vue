@@ -18,6 +18,8 @@
           <img src="@img/pinGouJie.gif" />
         </div>
       </activity>
+      <!--商品列表-->
+      <goods></goods>
     </div>
   </div>
 </template>
@@ -28,13 +30,15 @@
   import Activity from '@c/currency/Activity.vue'
   import Seconds from '@c/seconds/Seconds.vue'
   import ModeOptions from '@c/currency/ModeOptions.vue'
+  import Goods from '@c/goods/Goods.vue';
 
   export default {
     components: {
       MySwiper,
       Activity,
       ModeOptions,
-      Seconds
+      Seconds,
+      Goods
     },
     data() {
       return {
