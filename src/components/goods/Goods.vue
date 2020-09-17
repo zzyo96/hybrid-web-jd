@@ -36,9 +36,9 @@
       <div class="goods-item-desc">
         <p class="goods-item-desc-name text-line-2" :class="{'goods-item-desc-name-hint' : !item.isHave}">
           <!-- 是否为直营 -->
-          <!--<direct v-if="item.isDirect"></direct>-->
-          <!--&lt;!&ndash; 是否有库存 &ndash;&gt;-->
-          <!--<no-have v-if="!item.isHave"></no-have>-->
+          <direct v-if="item.isDirect"></direct>
+          <!-- 是否有库存 -->
+          <no-have v-if="!item.isHave"></no-have>
           {{item.name}}
         </p>
         <div class="goods-item-desc-data">
@@ -52,13 +52,13 @@
 </template>
 
 <script>
-  // import Direct from '@c/goods/Direct.vue';
-  // import NoHave from '@c/goods/NoHave.vue';
+  import Direct from '@c/goods/Direct.vue';
+  import NoHave from '@c/goods/NoHave.vue';
   import {axios} from '@js/axios.config.js'
   export default {
     components: {
-      // Direct,
-      // NoHave
+      Direct,
+      NoHave
     },
     props: {
       /**
