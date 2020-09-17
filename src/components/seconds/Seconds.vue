@@ -3,7 +3,7 @@
         <div class="seconds-wrap">
             <p class="seconds-wrap-title">京东秒杀</p>
             <!-- 倒计时模块组件 -->
-            <!--<count-down :endHours="13"></count-down>-->
+            <count-down :endHours="12"></count-down>
         </div>
 
         <div class="seconds-content">
@@ -17,10 +17,10 @@
 </template>
 
 <script>
-// import CountDown from '@c/seconds/CountDown.vue';
+import CountDown from '@c/seconds/CountDown.vue';
 export default {
     components: {
-        // CountDown
+        CountDown
     },
     props: {
         dataSource: {
