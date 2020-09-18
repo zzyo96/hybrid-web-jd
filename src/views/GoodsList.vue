@@ -7,21 +7,22 @@
         </navigation-bar>
 
         <!--<div class="goods-list-page-content" :class="{'iphonex-bottom' : $store.state.isIphoneX}">-->
-            <!--<goods-options @optionsChange="onGoodsOptionsChange"></goods-options>-->
+        <div class="goods-list-page-content">
+            <goods-options @optionsChange="onGoodsOptionsChange"></goods-options>
             <!--<goods :layoutType="layoutType.type" :sort="sortType"></goods>-->
-        <!--</div>-->
+        </div>
     </div>
 </template>
 
 <script>
 import NavigationBar from '@c/currency/NavigationBar.vue';
-// import GoodsOptions from '@c/goods/GoodsOptions.vue';
+import GoodsOptions from '@c/goods/GoodsOptions.vue';
 // import Goods from '@c/goods/Goods.vue';
 export default {
     name: 'goodsList',
     components: {
         NavigationBar,
-        // GoodsOptions,
+        GoodsOptions,
         // Goods
     },
     data: function () {
