@@ -23,5 +23,10 @@ export default new Router({
       // chunkName -> GoodsList.[hash].js
       component: () => import('./views/GoodsList.vue')
     },
+    {
+      path: '/goodsDetail',
+      name: 'goodsDetail',
+      component: () => import('./views/GoodsDetail.vue')
+    }
   ]
 })

@@ -28,6 +28,14 @@
         default:function(){
           return []
         }
+      },
+      /**
+       * 1、圆点切换
+       * 2、数字
+       */
+      paginationType: {
+        type: String,
+        default: '1'
       }
     },
     components:{
@@ -49,6 +57,37 @@
           }
         }
       }
+    },
+    methods: {
+      /**
+       * 根据分页器类型配置对应的分页器
+       */
+      initPaginnationLayout: function () {
+        switch(this.paginationType) {
+          // 圆点分页器
+          case '1':
+            this.swiperOptions.pagination = {
+              // 分页器对应的 html 元素
+              el: '.swiper-pagination',
+              // 分页器的样式
+              type: 'bullets',
+              // 分页器内的元素，添加类名
+              bulletClass: 'custom-bullet-class'
+            }
+            break;
+          // 数字分页器
+          case '2':
+            this.swiperOptions.pagination = {
+              el: '.swiper-pagination',
+              // 分页器样式(数字)
+              type: 'fraction'
+            }
+            break;
+        }
+      }
+    },
+    created: function () {
+      this.initPaginnationLayout();
     }
   }
 </script>

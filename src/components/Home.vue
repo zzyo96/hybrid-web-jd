@@ -36,7 +36,7 @@
         </div>
       </activity>
       <!--商品列表-->
-      <goods></goods>
+      <goods :layoutType="'3'" :isScroll="false"></goods>
     </div>
   </div>
 </template>
