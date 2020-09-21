@@ -330,7 +330,8 @@
           },
           // 把传递的数据附加到我们的 URL 上
           query: {
-            goodsId: item.id
+            goodsId: item.id,
+            item:item
           }
         });
       },

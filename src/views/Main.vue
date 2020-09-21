@@ -9,6 +9,7 @@
 import toolBar from '@c/currency/ToolBar.vue'
 
 export default {
+  name: 'imooc',
   components: {
     'tool-bar':toolBar,
     'home': () => import('@c/Home'),

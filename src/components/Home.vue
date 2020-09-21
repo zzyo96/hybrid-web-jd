@@ -106,6 +106,9 @@
         ANCHOR_SCROLL_TOP: 160
       }
     },
+    activated: function () {
+      this.$refs.home.scrollTop = this.scrollTopValue;
+    },
     methods: {
       initData: function () {
         Promise.all([
