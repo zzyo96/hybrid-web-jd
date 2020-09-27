@@ -62,6 +62,13 @@
       onChangeFragment(item,index){
         this.selectIndex = index;
         this.$emit('onChangeFragment',item.componentName)
+      },
+      /**
+       * 指定切换的 tab 页
+       */
+      pushFragment: function (index) {
+        // 调用 onChangeFragment 切换对应的 tab
+        this.onChangeFragment(this.toolBarData[index] , index);
       }
     }
   }

@@ -9,9 +9,9 @@ export default new Router({
   base:process.env.BASE_URL,
   routes:[
     {
-      path:'/',
-      name:'home',
-      component:Main
+      path: '/',
+      name: 'imooc',
+      component: Main
     },
     {
       path: '/goodsList',

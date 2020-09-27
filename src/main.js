@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueResource from 'vue-resource'
 import App from './App.vue'
 import router from './router'
-// import store from './store'
+import store from './store'
 import '@js/filters.js';
 import '@js/htmlFontSize.js'
 import '@js/axios.config.js'
@@ -13,6 +13,6 @@ Vue.use(VueResource)
 
 new Vue({
   router,
-  // store,
+  store,
   render: h => h(App),
 }).$mount('#app')
