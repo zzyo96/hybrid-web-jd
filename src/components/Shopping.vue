@@ -36,6 +36,7 @@
                     <div class="shopping-content-list-item-desc">
                         <!-- 名称 -->
                         <p class="shopping-content-list-item-desc-name text-line-2">
+                            <span>123----{{item.number}}</span>
                             <!-- 直营 -->
                             <direct v-if="item.isDirect"></direct>
                             {{item.name}}
@@ -45,7 +46,7 @@
                             <!-- 价格 -->
                             <p class="shopping-content-list-item-desc-data-price">￥{{item.price | priceValue}}</p>
                             <!-- 商品数量的控制组件 -->
-                            <!--<number-manager :defaultNumber="item.number" @onChangeNumber="onNumberChange(arguments, item, index)"></number-manager>-->
+                            <number-manager :defaultNumber="item.number" @onChangeNumber="onNumberChange(arguments, item, index)"></number-manager>
                         </div>
                     </div>
                 </div>
@@ -85,12 +86,12 @@
 <script>
 import NavigationBar from '@c/currency/NavigationBar.vue';
 import Direct from '@c/goods/Direct.vue';
-// import NumberManager from '@c/goods/NumberManager.vue';
+import NumberManager from '@c/goods/NumberManager.vue';
 export default {
     components: {
         NavigationBar,
         Direct,
-        // NumberManager
+        NumberManager
     },
     data: function () {
         return {
